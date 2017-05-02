@@ -30,12 +30,7 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 
-const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
-};
+const images = {};
 
 preloader(images);
 
