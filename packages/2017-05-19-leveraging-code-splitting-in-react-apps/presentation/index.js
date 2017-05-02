@@ -8,6 +8,7 @@ import {
   CodePane,
   Deck,
   Heading,
+  Image,
   ListItem,
   List,
   Quote,
@@ -29,7 +30,11 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 
-const images = {};
+const images = {
+  lowBandwidth: require("../assets/lowBandwidth.gif"),
+  mobileTrend: require("../assets/mobileTrend.jpg"),
+  spinner: require("../assets/spinner.gif")
+};
 
 preloader(images);
 
@@ -92,20 +97,18 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <Heading size={1}>[insert photo spinner]</Heading>
+          <Image src={images.spinner} width="60%" />
         </Slide>
 
         <Slide>
-          <Heading size={1}>[insert photo low band width]</Heading>
+          <Image src={images.lowBandwidth} width="50%" />
         </Slide>
 
         <Slide>
           <Heading size={1}>[insert photo showing that loading monolithic bundles in the middle of nowhere sucks]</Heading>
         </Slide>
 
-        <Slide>
-          <Heading size={1}>[insert photo mobile trend]</Heading>
-        </Slide>
+        <Slide bgImage={images.mobileTrend} />
 
         <Slide>
           <Heading size={1}>How?</Heading>
@@ -231,9 +234,9 @@ class AsyncLoad extends React.Component {
           <Heading size={1}>Useful patterns</Heading>
 
           <List>
-            <ListItem>Pattern 1</ListItem>
-            <ListItem>Pattern 2</ListItem>
-            <ListItem>Pattern 3</ListItem>
+            <ListItem>Consider vendors (longterm caching, eg. in webpack)</ListItem>
+            <ListItem>Splitting at Route & Component level</ListItem>
+            <ListItem>Consider what to code split</ListItem>
           </List>
         </Slide>
 
@@ -241,9 +244,9 @@ class AsyncLoad extends React.Component {
           <Heading size={1}>Recap</Heading>
 
           <List>
-            <ListItem>Recap 1</ListItem>
-            <ListItem>Recap 2</ListItem>
-            <ListItem>Recap 3</ListItem>
+            <ListItem>Load only what needed</ListItem>
+            <ListItem>It's easy</ListItem>
+            <ListItem>Has huge perfomance benefits</ListItem>
           </List>
         </Slide>
 
