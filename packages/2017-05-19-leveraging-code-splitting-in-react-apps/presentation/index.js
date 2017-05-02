@@ -234,7 +234,7 @@ class AsyncLoad extends React.Component {
           <Heading size={1}>Useful patterns</Heading>
 
           <List>
-            <ListItem>Consider vendors (longterm caching, eg. in webpack)</ListItem>
+            <ListItem>Consider vendors (longterm caching)</ListItem>
             <ListItem>Splitting at Route & Component level</ListItem>
             <ListItem>Consider what to code split</ListItem>
           </List>
