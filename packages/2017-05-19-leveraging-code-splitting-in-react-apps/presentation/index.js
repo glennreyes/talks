@@ -5,7 +5,6 @@ import React from "react";
 import {
   BlockQuote,
   Cite,
-  Code,
   CodePane,
   Deck,
   Heading,
@@ -192,7 +191,10 @@ class AsyncLoad extends React.Component {
   }
 
   render() {
-    const { isLoading, ...props } = this.props;
+    const {
+      isLoading,
+      ...props,
+    } = this.props;
     const { AsyncComponent } = this.state;
 
     if (AsyncComponent) {
@@ -211,7 +213,12 @@ class AsyncLoad extends React.Component {
           }
           ranges={[
             { loc: [0, 1] },
-            { loc: [4, 6] }
+            { loc: [2, 7] },
+            { loc: [8, 17] },
+            { loc: [18, 24] },
+            { loc: [25, 30] },
+            { loc: [31, 34] },
+            { loc: [35, 38] }
           ]}
         />
 
