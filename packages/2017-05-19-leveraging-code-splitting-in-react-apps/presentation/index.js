@@ -213,9 +213,14 @@ class AsyncLoad extends React.Component {
           }
           ranges={[
             { loc: [0, 1] },
-            { loc: [2, 7] },
+            { loc: [2, 3] },
+            { loc: [4, 7] },
             { loc: [8, 17] },
-            { loc: [18, 24] },
+            { loc: [9, 10] },
+            { loc: [10, 16] },
+            { loc: [12, 15] },
+            { loc: [18, 37] },
+            { loc: [19, 24] },
             { loc: [25, 30] },
             { loc: [31, 34] },
             { loc: [35, 38] }
