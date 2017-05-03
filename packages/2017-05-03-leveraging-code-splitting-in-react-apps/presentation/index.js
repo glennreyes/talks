@@ -161,6 +161,9 @@ import('../Newsfeed').then(module => {
               <ListItem>TC39 proposal: Stage 3</ListItem>
             </Appear>
             <Appear>
+              <ListItem>syntax-dynamic-plugin</ListItem>
+            </Appear>
+            <Appear>
               <ListItem>Returns a Promise</ListItem>
             </Appear>
             <Appear>
