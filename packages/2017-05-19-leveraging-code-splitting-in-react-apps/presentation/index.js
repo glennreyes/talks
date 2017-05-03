@@ -164,9 +164,11 @@ import('../Newsfeed').then(module => {
         <Slide>
           <CodePane
             lang="jsx"
-            style={{ fontSize: "1.25rem" }}
+            style={{ fontSize: "2rem" }}
             source={
-"<AsyncLoad component={() => import('../Newsfeed')} />"
+`<AsyncLoad
+  component={() => import('../Newsfeed')}
+/>`
             }
           />
         </Slide>
@@ -231,12 +233,33 @@ class AsyncLoad extends React.Component {
         />
 
         <Slide>
+          <CodePane
+            lang="jsx"
+            style={{ fontSize: "2rem" }}
+            source={
+`<AsyncLoad
+  component={() => import('../Newsfeed')}
+/>`
+            }
+          />
+        </Slide>
+
+        <Slide>
           <Heading size={1}>Useful patterns</Heading>
 
           <List>
             <ListItem>Consider vendors (longterm caching)</ListItem>
             <ListItem>Splitting at Route & Component level</ListItem>
             <ListItem>Consider what to code split</ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading size={3}>Useful React packages</Heading>
+
+          <List>
+            <ListItem>thejameskyle/react-loadable</ListItem>
+            <ListItem>ctrlplusb/react-async-component</ListItem>
           </List>
         </Slide>
 
