@@ -104,9 +104,9 @@ export default class Presentation extends React.Component {
           <Image src={images.lowBandwidth} width="50%" />
         </Slide>
 
-        <Slide>
+        {/* <Slide>
           <Heading size={1}>[insert photo showing that loading monolithic bundles in the middle of nowhere sucks]</Heading>
-        </Slide>
+        </Slide> */}
 
         <Slide bgImage={images.mobileTrend} />
 
@@ -117,15 +117,6 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={3}>import();</Heading>
           <Heading size={2} lineHeight={1.8}>🎉</Heading>
-        </Slide>
-
-        <Slide>
-          <Heading size={2}>import();</Heading>
-          <List>
-            <ListItem>TC39 proposal: Stage 3</ListItem>
-            <ListItem>Returns a Promise</ListItem>
-            <ListItem>Webpack 2 support</ListItem>
-          </List>
         </Slide>
 
         <Slide>
@@ -155,6 +146,15 @@ import('../Newsfeed').then(module => {
 });`
             }
           />
+        </Slide>
+
+        <Slide>
+          <Heading size={2}>import();</Heading>
+          <List>
+            <ListItem>TC39 proposal: Stage 3</ListItem>
+            <ListItem>Returns a Promise</ListItem>
+            <ListItem>Webpack 2 support</ListItem>
+          </List>
         </Slide>
 
         <Slide>
