@@ -12,7 +12,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "bundl.js",
+    filename: "bundle.js",
     publicPath: "/dist/"
   },
   plugins: [
