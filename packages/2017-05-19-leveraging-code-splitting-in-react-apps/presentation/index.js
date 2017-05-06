@@ -32,6 +32,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
+  feross: require("../assets/feross.png"),
   lowBandwidth: require("../assets/lowBandwidth.gif"),
   mobileTrend: require("../assets/mobileTrend.jpg"),
   spinner: require("../assets/spinner.gif")
@@ -283,6 +284,19 @@ class AsyncLoad extends React.Component {
             <ListItem>Recap 2</ListItem>
             <ListItem>Recap 3</ListItem>
           </List>
+        </Slide>
+
+        <Slide>
+          <BlockQuote>
+            <Quote textColor="secondary">
+              "Think before you over-engineer!"
+            </Quote>
+            <Cite>Feross (@feross)</Cite>
+          </BlockQuote>
+        </Slide>
+
+        <Slide>
+          <Image src={images.feross} width="80%" />
         </Slide>
 
         <Slide>
