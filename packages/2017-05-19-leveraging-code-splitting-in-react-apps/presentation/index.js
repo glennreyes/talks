@@ -276,21 +276,12 @@ class AsyncLoad extends React.Component {
         </Slide>
 
         <Slide>
-          <Heading size={3}>Useful React packages</Heading>
-
-          <List>
-            <ListItem>thejameskyle/react-loadable</ListItem>
-            <ListItem>ctrlplusb/react-async-component</ListItem>
-          </List>
-        </Slide>
-
-        <Slide>
           <Heading size={1}>Recap</Heading>
 
           <List>
-            <ListItem>Load only what needed</ListItem>
-            <ListItem>It's easy</ListItem>
-            <ListItem>Huge page speed impacts</ListItem>
+            <ListItem>Recap 1</ListItem>
+            <ListItem>Recap 2</ListItem>
+            <ListItem>Recap 3</ListItem>
           </List>
         </Slide>
 
