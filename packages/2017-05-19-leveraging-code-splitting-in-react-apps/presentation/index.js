@@ -3,6 +3,7 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
+  Appear,
   BlockQuote,
   Cite,
   CodePane,
@@ -156,9 +157,18 @@ import('../Newsfeed').then(module => {
         <Slide>
           <Heading size={2}>import();</Heading>
           <List>
-            <ListItem>TC39 proposal: Stage 3</ListItem>
-            <ListItem>Returns a Promise</ListItem>
-            <ListItem>Webpack 2 support</ListItem>
+            <Appear>
+              <ListItem>TC39 proposal: Stage 3</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>syntax-dynamic-plugin</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Returns a Promise</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Webpack 2 support</ListItem>
+            </Appear>
           </List>
         </Slide>
 
@@ -253,9 +263,15 @@ class AsyncLoad extends React.Component {
           <Heading size={1}>Useful patterns</Heading>
 
           <List>
-            <ListItem>Consider vendors (longterm caching)</ListItem>
-            <ListItem>Splitting at Route & Component level</ListItem>
-            <ListItem>Consider what to code split</ListItem>
+            <Appear>
+              <ListItem>Consider vendors (longterm caching)</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Splitting at Route & Component level</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Consider what to code split</ListItem>
+            </Appear>
           </List>
         </Slide>
 
