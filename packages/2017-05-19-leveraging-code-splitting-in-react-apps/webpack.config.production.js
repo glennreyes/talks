@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/talks/packages/2017-05-03-leveraging-code-splitting-in-react-apps/dist/"
+    publicPath: "/talks/packages/2017-05-19-leveraging-code-splitting-in-react-apps/dist/"
   },
   plugins: [
     new webpack.DefinePlugin({
