@@ -10,9 +10,8 @@ import {
   Deck,
   Heading as HeadingDefault,
   Image,
+  List as ListDefault,
   ListItem as ListItemDefault,
-  List,
-  Quote,
   Slide,
   Text
 } from "spectacle";
@@ -25,6 +24,9 @@ import preloader from "spectacle/lib/utils/preloader";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
+
+// Import components
+import Comparison from "../components/comparison";
 
 // Require CSS
 require("normalize.css");
@@ -55,8 +57,8 @@ const theme = createTheme({
 
 const ranges = {
   simple: [
-    { loc: [0, 17] },
-    { loc: [18, 37] }
+    { loc: [0, 15] },
+    { loc: [16, 32] }
   ],
   detail: [
     { loc: [0, 1] },
@@ -80,9 +82,15 @@ const Heading = (props) => (
   <HeadingDefault size={4} bold={false} {...props} />
 );
 
-const ListItem = (props) => (
+const List = (props) => (
+  <ListDefault style={{ listStyle: "none" }} {...props} />
+);
+
+const ListItem = ({ ...props, children }) => (
   <Appear>
-    <ListItemDefault {...props} />
+    <ListItemDefault {...props}>
+      {`✨ ${children}`}
+    </ListItemDefault>
   </Appear>
 );
 
@@ -171,17 +179,29 @@ export default class Presentation extends React.Component {
           <Image src={images.thinkingFace} width={140} />
         </Slide>
 
-        {/* <Slide
+        <Slide
           notes={
             <ul>
-              <li>Add chart comparison between vendor/async (js) & css splitting</li>
+              <li>comparison between vendor/async (js) & css splitting</li>
             </ul>
-          }>
-        </Slide> */}
+          }
+        >
+          <Comparison />
+        </Slide>
+
+        <Slide
+          notes={
+            <ul>
+              <li>We focus on async code-splitting</li>
+            </ul>
+          }
+        >
+          <Comparison focus />
+        </Slide>
 
 
         <Slide>
-          <Heading size={2}>import();</Heading>
+          <Heading>import()</Heading>
           <List>
             <ListItem>TC39 proposal: Stage 3</ListItem>
             <ListItem>syntax-dynamic-plugin</ListItem>
@@ -192,28 +212,26 @@ export default class Presentation extends React.Component {
 
         <Slide>
 
-          <Heading>Synchronous</Heading>
+          <Heading>Sync import</Heading>
           <CodePane
             lang="jsx"
             style={{ fontSize: "1.25rem" }}
             source={
-`import Newsfeed from '../Newsfeed';
+`import MyModule from '../MyModule';
 
-// Render newsfeed
-document.getElementById('newsfeed').innerHTML = Newsfeed.getHTML();`
+console.log(MyModule);`
             }
           />
 
           <br />
 
-          <Heading>Asynchronous</Heading>
+          <Heading>Async import</Heading>
           <CodePane
             lang="jsx"
             style={{ fontSize: "1.25rem" }}
             source={
-`// Render newsfeed
-import('../Newsfeed').then(module => {
-  document.getElementById('newsfeed').innerHTML = module.default.getHTML();
+`import('../MyModule').then(module => {
+  console.log(module.default);
 });`
             }
           />
@@ -224,12 +242,10 @@ import('../Newsfeed').then(module => {
         </Slide>
 
         <CodeSlide
-          transition={[]}
           lang="js"
+          ranges={ranges.simple}
           code={
-`import React from 'react';
-
-class AsyncLoad extends React.Component {
+`class AsyncLoad extends React.Component {
 
   state = {
     AsyncComponent: null,
@@ -246,16 +262,12 @@ class AsyncLoad extends React.Component {
   }
 
   render() {
-    const {
-      isLoading,
-      ...props,
-    } = this.props;
+    const { isLoading, ...props } =
+      this.props;
     const { AsyncComponent } = this.state;
 
     if (AsyncComponent) {
-      return (
-        <AsyncComponent {...props} />
-      );
+      return <AsyncComponent {...props} />;
     }
 
     if (isLoading) {
@@ -270,9 +282,21 @@ class AsyncLoad extends React.Component {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 `
           }
-          ranges={ranges.simple}
         />
 
         <Slide>
