@@ -26,7 +26,10 @@ import preloader from "spectacle/lib/utils/preloader";
 import createTheme from "spectacle/lib/themes/default";
 
 // Import components
+import Async from "../components/async";
+import Bundle from "../components/bundle";
 import Comparison from "../components/comparison";
+import Vendor from "../components/vendor";
 
 // Require CSS
 require("normalize.css");
@@ -122,7 +125,49 @@ export default class Presentation extends React.Component {
           <TwitterHandle />
         </Slide>
 
-        <Slide
+        <Slide>
+          <Heading>
+            Monolythic bundle
+          </Heading>
+          <Bundle />
+        </Slide>
+
+        <Slide>
+          <Heading>
+            Common chunks
+          </Heading>
+          <Vendor />
+        </Slide>
+
+        <Slide>
+          <Heading>
+            Async chunks
+          </Heading>
+          <Async />
+        </Slide>
+
+        <Slide>
+          <Heading>
+            /feed
+          </Heading>
+          <Async feed />
+        </Slide>
+
+        <Slide>
+          <Heading>
+            /profile
+          </Heading>
+          <Async profile />
+        </Slide>
+
+        <Slide>
+          <Heading>
+            /404
+          </Heading>
+          <Async notfound />
+        </Slide>
+
+        {/* <Slide
           notes={
             <ul>
               <li>What's code-splitting?</li>
@@ -130,7 +175,7 @@ export default class Presentation extends React.Component {
           }
         >
           <Image src={images.thinkingFace} width={140} />
-        </Slide>
+        </Slide> */}
 
         <Slide>
           <BlockQuote>
@@ -207,6 +252,7 @@ export default class Presentation extends React.Component {
             <ListItem>syntax-dynamic-plugin</ListItem>
             <ListItem>Returns a Promise</ListItem>
             <ListItem>Webpack 2 support</ListItem>
+            <ListItem>Formerly require.ensure() / System.import()</ListItem>
           </List>
         </Slide>
 
@@ -315,10 +361,10 @@ console.log(MyModule);`
           notes={
             <ul>
               <li>
-                Consider vendor splitting for long term caching
+                Start splitting vendors for long term caching
               </li>
               <li>
-                Split at route (react-router) or component level
+                Split at route or component level
               </li>
               <li>
                 What to code split
@@ -329,14 +375,14 @@ console.log(MyModule);`
           <Heading>Splitting strategy</Heading>
 
           <List ordered>
-            <ListItem>Consider vendor splitting</ListItem>
-            <ListItem>Split at Route & Component level</ListItem>
-            <ListItem>Consider what to code split</ListItem>
+            <ListItem>Start with vendor splitting</ListItem>
+            <ListItem>Split at Route level</ListItem>
+            <ListItem>Split at Component level</ListItem>
           </List>
         </Slide>
 
         <Slide>
-          <Heading>Recap</Heading>
+          <Heading>Final thoughts</Heading>
 
           <List>
             <ListItem>Recap 1</ListItem>
