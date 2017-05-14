@@ -28,7 +28,7 @@ import createTheme from "spectacle/lib/themes/default";
 // Import components
 import Async from "../components/async";
 import Bundle from "../components/bundle";
-import Comparison from "../components/comparison";
+// import Comparison from "../components/comparison";
 import Vendor from "../components/vendor";
 
 // Require CSS
@@ -99,7 +99,7 @@ const ListItem = ({ ...props, children }) => (
 
 const TwitterHandle = () => (
   <Text margin="1em 0 0" textColor="twitter">
-    @glnnrys
+    Glenn Reyes | @glnnrys
   </Text>
 );
 
@@ -123,6 +123,15 @@ export default class Presentation extends React.Component {
             in React apps
           </Heading>
           <TwitterHandle />
+        </Slide>
+
+        <Slide>
+          <BlockQuote>
+            <Heading>
+              "It allows you to split your code into various bundles which you can then load on demand"
+            </Heading>
+            <Cite textColor="secondary">webpack.js.org</Cite>
+          </BlockQuote>
         </Slide>
 
         <Slide>
@@ -177,16 +186,7 @@ export default class Presentation extends React.Component {
           <Image src={images.thinkingFace} width={140} />
         </Slide> */}
 
-        <Slide>
-          <BlockQuote>
-            <Heading>
-              "It allows you to split your code into various bundles which you can then load on demand"
-            </Heading>
-            <Cite textColor="secondary">webpack.js.org</Cite>
-          </BlockQuote>
-        </Slide>
-
-        <Slide
+        {/* <Slide
           notes={
             <ul>
               <li>Why code-splitting?</li>
@@ -194,7 +194,7 @@ export default class Presentation extends React.Component {
           }
         >
           <Image src={images.thinkingFace} width={140} />
-        </Slide>
+        </Slide> */}
 
         <Slide>
           <Image src={images.spinner} width="25%" />
@@ -224,7 +224,7 @@ export default class Presentation extends React.Component {
           <Image src={images.thinkingFace} width={140} />
         </Slide>
 
-        <Slide
+        {/* <Slide
           notes={
             <ul>
               <li>comparison between vendor/async (js) & css splitting</li>
@@ -232,9 +232,9 @@ export default class Presentation extends React.Component {
           }
         >
           <Comparison />
-        </Slide>
+        </Slide> */}
 
-        <Slide
+        {/* <Slide
           notes={
             <ul>
               <li>We focus on async code-splitting</li>
@@ -242,7 +242,7 @@ export default class Presentation extends React.Component {
           }
         >
           <Comparison focus />
-        </Slide>
+        </Slide> */}
 
 
         <Slide>
@@ -385,9 +385,9 @@ console.log(MyModule);`
           <Heading>Final thoughts</Heading>
 
           <List>
-            <ListItem>Recap 1</ListItem>
-            <ListItem>Recap 2</ListItem>
-            <ListItem>Recap 3</ListItem>
+            <ListItem>Final thought 1</ListItem>
+            <ListItem>Final thought 2</ListItem>
+            <ListItem>Final thought 3</ListItem>
           </List>
         </Slide>
 
