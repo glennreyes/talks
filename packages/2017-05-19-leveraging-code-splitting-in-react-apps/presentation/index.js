@@ -32,16 +32,15 @@ import Bundle from "../components/bundle";
 import Vendor from "../components/vendor";
 
 // Require CSS
-require("normalize.css");
-require("spectacle/lib/themes/default/index.css");
+import "normalize.css";
+import "spectacle/lib/themes/default/index.css";
 
 
 const images = {
   feross: require("../assets/feross.png"),
   lowBandwidth: require("../assets/lowBandwidth.gif"),
   mobileTrend: require("../assets/mobileTrend.jpg"),
-  spinner: require("../assets/spinner.gif"),
-  thinkingFace: require("../assets/thinkingFace.png")
+  spinner: require("../assets/spinner.gif")
 };
 
 preloader(images);
@@ -136,7 +135,7 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <Heading>
-            Monolythic bundle
+            Monolithic bundle
           </Heading>
           <Bundle />
         </Slide>
@@ -152,7 +151,7 @@ export default class Presentation extends React.Component {
           <Heading>
             Async chunks
           </Heading>
-          <Async />
+          <Async async />
         </Slide>
 
         <Slide>
@@ -176,26 +175,6 @@ export default class Presentation extends React.Component {
           <Async notfound />
         </Slide>
 
-        {/* <Slide
-          notes={
-            <ul>
-              <li>What's code-splitting?</li>
-            </ul>
-          }
-        >
-          <Image src={images.thinkingFace} width={140} />
-        </Slide> */}
-
-        {/* <Slide
-          notes={
-            <ul>
-              <li>Why code-splitting?</li>
-            </ul>
-          }
-        >
-          <Image src={images.thinkingFace} width={140} />
-        </Slide> */}
-
         <Slide>
           <Image src={images.spinner} width="25%" />
         </Slide>
@@ -205,45 +184,10 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <Heading>Load code as needed</Heading>
+          <Heading>Tailor your code</Heading>
         </Slide>
-
-        {/* <Slide>
-          <Heading size={1}>[insert photo showing that loading monolithic bundles in the middle of nowhere sucks]</Heading>
-        </Slide> */}
 
         <Slide bgImage={images.mobileTrend} />
-
-        <Slide
-          notes={
-            <ul>
-              <li>How?</li>
-            </ul>
-          }
-        >
-          <Image src={images.thinkingFace} width={140} />
-        </Slide>
-
-        {/* <Slide
-          notes={
-            <ul>
-              <li>comparison between vendor/async (js) & css splitting</li>
-            </ul>
-          }
-        >
-          <Comparison />
-        </Slide> */}
-
-        {/* <Slide
-          notes={
-            <ul>
-              <li>We focus on async code-splitting</li>
-            </ul>
-          }
-        >
-          <Comparison focus />
-        </Slide> */}
-
 
         <Slide>
           <Heading>import()</Heading>
@@ -284,7 +228,15 @@ console.log(MyModule);`
         </Slide>
 
         <Slide>
-          <Heading size={4}>How in React?</Heading>
+          <CodePane
+            lang="jsx"
+            style={{ fontSize: "2rem" }}
+            source={
+`<AsyncLoad
+  component={() => import('../Newsfeed')}
+/>`
+            }
+          />
         </Slide>
 
         <CodeSlide
@@ -375,9 +327,9 @@ console.log(MyModule);`
           <Heading>Splitting strategy</Heading>
 
           <List ordered>
-            <ListItem>Start with vendor splitting</ListItem>
-            <ListItem>Split at Route level</ListItem>
-            <ListItem>Split at Component level</ListItem>
+            <ListItem>Split app and vendor code</ListItem>
+            <ListItem>Split at Route level (async)</ListItem>
+            <ListItem>Split at Component level (async)</ListItem>
           </List>
         </Slide>
 
@@ -385,9 +337,9 @@ console.log(MyModule);`
           <Heading>Final thoughts</Heading>
 
           <List>
-            <ListItem>Final thought 1</ListItem>
-            <ListItem>Final thought 2</ListItem>
-            <ListItem>Final thought 3</ListItem>
+            <ListItem>Load code as needed</ListItem>
+            <ListItem>Shared dependencies add complexity</ListItem>
+            <ListItem>react-loadable, react-async-component</ListItem>
           </List>
         </Slide>
 
