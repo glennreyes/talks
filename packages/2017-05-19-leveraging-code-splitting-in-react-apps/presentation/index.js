@@ -334,16 +334,6 @@ console.log(MyModule);`
         </Slide>
 
         <Slide>
-          <Heading>Final thoughts</Heading>
-
-          <List>
-            <ListItem>Load code as needed</ListItem>
-            <ListItem>Shared dependencies add complexity</ListItem>
-            <ListItem>react-loadable, react-async-component</ListItem>
-          </List>
-        </Slide>
-
-        <Slide>
           <Heading>Don't over-engineer</Heading>
         </Slide>
 
@@ -352,8 +342,22 @@ console.log(MyModule);`
         </Slide>
 
         <Slide>
-          <Heading>Thank you!</Heading>
-          <TwitterHandle />
+          <Heading>Final thoughts</Heading>
+
+          <List>
+            <ListItem>Code-splitting allow to load code as needed</ListItem>
+            <ListItem>Async code-splitting loads code on demand</ListItem>
+            <ListItem>Shared modules add complexity</ListItem>
+            <ListItem>react-loadable, react-async-component</ListItem>
+            <ListItem>Don't over-engineer</ListItem>
+          </List>
+
+          <Appear>
+            <div>
+              <Heading>Thank you!</Heading>
+              <TwitterHandle />
+            </div>
+          </Appear>
         </Slide>
 
       </Deck>
