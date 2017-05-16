@@ -184,7 +184,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <Heading>Tailor your code</Heading>
+          <Heading>Load code as needed</Heading>
         </Slide>
 
         <Slide bgImage={images.mobileTrend} />
@@ -348,7 +348,6 @@ console.log(MyModule);`
             <ListItem>Code-splitting allow to load code as needed</ListItem>
             <ListItem>Async code-splitting loads code on demand</ListItem>
             <ListItem>Shared modules add complexity</ListItem>
-            <ListItem>react-loadable, react-async-component</ListItem>
             <ListItem>Don't over-engineer</ListItem>
           </List>
 
