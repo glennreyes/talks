@@ -228,6 +228,8 @@ console.log(MyModule);`
         </Slide>
 
         <Slide>
+          <Heading>React</Heading>
+          <br />
           <CodePane
             lang="jsx"
             style={{ fontSize: "2rem" }}
@@ -341,12 +343,21 @@ console.log(MyModule);`
           <Image src={images.feross} width="80%" />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>CS allow to load code as needed</li>
+              <li>Async CS will load code on demand / adds script tag to head</li>
+              <li>Avoid shared modules, only do it if you exactly know what to do</li>
+              <li>Double-check if CS makes sense (effort, etc.)</li>
+            </ul>
+          }
+        >
           <Heading>Final thoughts</Heading>
 
           <List>
-            <ListItem>Code-splitting allow to load code as needed</ListItem>
-            <ListItem>Async code-splitting loads code on demand</ListItem>
+            <ListItem>loads code as needed</ListItem>
+            <ListItem>loads code on demand</ListItem>
             <ListItem>Shared modules add complexity</ListItem>
             <ListItem>Don't over-engineer</ListItem>
           </List>
