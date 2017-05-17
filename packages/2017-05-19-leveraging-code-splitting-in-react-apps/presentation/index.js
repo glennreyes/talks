@@ -96,7 +96,7 @@ const ListItem = ({ ...props, children }) => (
   </Appear>
 );
 
-const TwitterHandle = () => (
+const Signature = () => (
   <Text margin="1em 0 0" textColor="twitter">
     Glenn Reyes | @glnnrys
   </Text>
@@ -121,10 +121,17 @@ export default class Presentation extends React.Component {
             Leveraging code-splitting<br />
             in React apps
           </Heading>
-          <TwitterHandle />
+          <Signature />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>What is code-splitting?</li>
+              <li>The new webpack docs notes</li>
+            </ul>
+          }
+        >
           <BlockQuote>
             <Heading>
               "It allows you to split your code into various bundles which you can then load on demand"
@@ -133,75 +140,173 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
 
-        <Slide>
-          <Heading>
+        <Slide
+          notes={
+            <ul>
+              <li>The new webpack docs notes, that it allows to split code into bundles which you load on demand</li>
+            </ul>
+          }
+        >
+          <Heading
+            notes={
+              <ul>
+                <li>No code-splitting</li>
+                <li>Giant bundle</li>
+                <li>Load unnecessary code</li>
+              </ul>
+            }
+          >
             Monolithic bundle
           </Heading>
           <Bundle />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>Split modules into a vendor chunk that (almost) never changes</li>
+              <li>Eg. node_modules</li>
+              <li>Long-term caching</li>
+              <li>Vendors stay cached at user/client after an update in the app code</li>
+              <li>In webpack: Common chunks plugin</li>
+            </ul>
+          }
+        >
           <Heading>
             Common chunks
           </Heading>
           <Vendor />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>Split further</li>
+              <li>Difference: load chunk asynchronously</li>
+              <li>In your HTML element tree webpack appends another script-tag for you</li>
+            </ul>
+          }
+        >
           <Heading>
             Async chunks
           </Heading>
           <Async async />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>Loads exact code for your feed page</li>
+            </ul>
+          }
+        >
           <Heading>
             /feed
           </Heading>
           <Async feed />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>Loads exact code for your profile page</li>
+            </ul>
+          }
+        >
           <Heading>
             /profile
           </Heading>
           <Async profile />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>Loads exact code for your 404 page</li>
+            </ul>
+          }
+        >
           <Heading>
             /404
           </Heading>
           <Async notfound />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>Why do we want to code split?</li>
+              <li>We aim to not see this spinner (for too long)</li>
+            </ul>
+          }
+        >
           <Image src={images.spinner} width="25%" />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>Mono bundles tend to feel like this</li>
+            </ul>
+          }
+        >
           <Image src={images.lowBandwidth} width="50%" />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>What we want is to load only the code that is needed right now</li>
+            </ul>
+          }
+        >
           <Heading>Load code as needed</Heading>
         </Slide>
 
-        <Slide bgImage={images.mobileTrend} />
+        <Slide
+          bgImage={images.mobileTrend}
+          notes={
+            <ul>
+              <li>We are priviledged</li>
+              <li>We have high speed computers & internet</li>
+              <li>More & more users using internet through smartphones</li>
+              <li>Users with low 3G will thank you!</li>
+            </ul>
+          }
+        />
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>Dynamic import has arrived!</li>
+              <li>Function-like syntactic form to load modules asynchronously</li>
+              <li>import() Returns the Promise which resolves the module</li>
+              <li>TC39 proposal: Stage 3</li>
+              <li>If you want babel to understand it: syntax-dynamic-plugin</li>
+              <li>Webpack v2 support</li>
+            </ul>
+          }
+          maxWidth="80%"
+        >
           <Heading>import()</Heading>
           <List>
+            <ListItem>Function-like syntactic form</ListItem>
+            <ListItem>Load modules asynchronously</ListItem>
             <ListItem>TC39 proposal: Stage 3</ListItem>
             <ListItem>syntax-dynamic-plugin</ListItem>
-            <ListItem>Returns a Promise</ListItem>
-            <ListItem>Webpack 2 support</ListItem>
-            <ListItem>Formerly require.ensure() / System.import()</ListItem>
+            <ListItem>Webpack v2 support</ListItem>
           </List>
         </Slide>
 
-        <Slide>
-
+        <Slide
+          notes={
+            <ul>
+              <li>Instead of import MyModule from '../MyModule'</li>
+              <li>You would call import like a function and pass the path to your module</li>
+              <li>Then as a result you get your module</li>
+            </ul>
+          }
+        >
           <Heading>Sync import</Heading>
           <CodePane
             lang="jsx"
@@ -227,7 +332,14 @@ console.log(MyModule);`
           />
         </Slide>
 
-        <Slide>
+        <Slide
+          notes={
+            <ul>
+              <li>How in React?</li>
+              <li>Create a React Component that loads async components</li>
+            </ul>
+          }
+        >
           <Heading>React</Heading>
           <br />
           <CodePane
@@ -244,6 +356,16 @@ console.log(MyModule);`
         <CodeSlide
           lang="js"
           ranges={ranges.simple}
+          notes={
+            <ul>
+              <li>Add a state AsyncComponent</li>
+              <li>In the componentDidMount lifecycle ...</li>
+              <li>We call the function that returns the Promise from dynamic import</li>
+              <li>And then set the state</li>
+              <li>In our render function we render our async component when the state has been set</li>
+              <li>If not we load a loading spinner or null</li>
+            </ul>
+          }
           code={
 `class AsyncLoad extends React.Component {
 
@@ -299,7 +421,14 @@ console.log(MyModule);`
           }
         />
 
-        <Slide>
+        <Slide
+          notes={
+          <ul>
+            <li>Benefit: Create easily split points via React components</li>
+            <li>Benefit: Reusable</li>
+          </ul>
+        }
+        >
           <CodePane
             lang="jsx"
             style={{ fontSize: "2rem" }}
@@ -314,15 +443,11 @@ console.log(MyModule);`
         <Slide
           notes={
             <ul>
-              <li>
-                Start splitting vendors for long term caching
-              </li>
-              <li>
-                Split at route or component level
-              </li>
-              <li>
-                What to code split
-              </li>
+              <li>How to start?</li>
+              <li>Evaluate what modules don't change often (node_modules)</li>
+              <li>Start splitting them into a seperate chunk (vendor) - for long term caching</li>
+              <li>Good idea: Split at route or component level</li>
+              <li>Be aware with shared modules - lead to be complex</li>
             </ul>
           }
         >
@@ -365,7 +490,7 @@ console.log(MyModule);`
           <Appear>
             <div>
               <Heading>Thank you!</Heading>
-              <TwitterHandle />
+              <Signature />
             </div>
           </Appear>
         </Slide>
