@@ -161,7 +161,6 @@ export default class Presentation extends React.Component {
               <li>Split modules into a vendor chunk that (almost) never changes</li>
               <li>Eg. node_modules</li>
               <li>Long-term caching</li>
-              <li>Vendors stay cached at user/client after an update in the app code</li>
               <li>In webpack: Common chunks plugin</li>
             </ul>
           }
@@ -275,7 +274,7 @@ export default class Presentation extends React.Component {
             <ul>
               <li>Dynamic import have arrived!</li>
               <li>Function-like syntactic form to load modules asynchronously</li>
-              <li>import() Returns a Promise and resolves the module</li>
+              <li>import() Returns a Promise of the the module</li>
               <li>TC39 proposal: Stage 3</li>
               <li>If you want Babel to understand it: syntax-dynamic-plugin</li>
               <li>Webpack v2 support</li>
@@ -355,7 +354,7 @@ console.log(MyModule);`
             <ul>
               <li>Add a state AsyncComponent</li>
               <li>In the componentDidMount lifecycle ...</li>
-              <li>We call the function that returns the Promise from dynamic import</li>
+              <li>We call the function it returns a Promise of the module</li>
               <li>And then set the state</li>
               <li>In our render function we render our async component when the state has been set</li>
               <li>If not we load a loading spinner or null</li>
@@ -439,7 +438,7 @@ console.log(MyModule);`
           notes={
             <ul>
               <li>How to start?</li>
-              <li>Evaluate what modules don't change often (node_modules)</li>
+              <li>Evaluate which modules don't change often (node_modules)</li>
               <li>Start splitting them into a seperate chunk (vendor) - for long term caching</li>
               <li>Good idea: Split at route, then at component level</li>
               <li>Be aware with shared modules - lead to be complex</li>
@@ -476,8 +475,8 @@ console.log(MyModule);`
           <Heading>Recap</Heading>
 
           <List>
-            <ListItem>loads code as needed</ListItem>
-            <ListItem>loads code on demand</ListItem>
+            <ListItem>Load code as needed</ListItem>
+            <ListItem>Load code on demand</ListItem>
             <ListItem>Shared modules add complexity</ListItem>
             <ListItem>Don't over-engineer</ListItem>
           </List>
