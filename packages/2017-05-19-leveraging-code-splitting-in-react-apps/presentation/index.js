@@ -446,7 +446,7 @@ console.log(MyModule);`
               <li>How to start?</li>
               <li>Evaluate what modules don't change often (node_modules)</li>
               <li>Start splitting them into a seperate chunk (vendor) - for long term caching</li>
-              <li>Good idea: Split at route or component level</li>
+              <li>Good idea: Split at route, then at component level</li>
               <li>Be aware with shared modules - lead to be complex</li>
             </ul>
           }
