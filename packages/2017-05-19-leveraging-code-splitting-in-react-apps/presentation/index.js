@@ -89,11 +89,9 @@ const List = (props) => (
 );
 
 const ListItem = ({ ...props, children }) => (
-  <Appear>
-    <ListItemDefault {...props}>
-      {`✨ ${children}`}
-    </ListItemDefault>
-  </Appear>
+  <ListItemDefault {...props}>
+    {`✨ ${children}`}
+  </ListItemDefault>
 );
 
 const Signature = () => (
@@ -467,8 +465,9 @@ console.log(MyModule);`
             <ul>
               <li>CS can load your code as needed</li>
               <li>Async CS will load code on demand / adds script tag to head</li>
-              <li>Avoid shared modules, only do it if you exactly know what to do</li>
-              <li>Double-check if CS makes sense (effort, etc.)</li>
+              <li>Avoid shared modules, only do it if you have a complete vision of your components</li>
+              <li>Double-check where CS makes sense (effort, etc.)</li>
+              <li>Don't over-engineer</li>
             </ul>
           }
         >
@@ -476,9 +475,9 @@ console.log(MyModule);`
 
           <List>
             <ListItem>Load code as needed</ListItem>
-            <ListItem>Load code on demand</ListItem>
+            <ListItem>Code-splitting can load code on demand</ListItem>
             <ListItem>Shared modules add complexity</ListItem>
-            <ListItem>Don't over-engineer</ListItem>
+            <ListItem>Don't over-engineer!</ListItem>
           </List>
 
           <Appear>
