@@ -110,8 +110,7 @@ export default class Presentation extends React.Component {
         controls={false}
         progress="bar"
         theme={theme}
-        transition={["fade"]}
-        transitionDuration={300}
+        transition={[]}
       >
 
         <Slide>
@@ -482,7 +481,7 @@ console.log(MyModule);`
 
           <Appear>
             <div>
-              <Heading>Thank you!</Heading>
+              <Heading>Come talk to me!</Heading>
               <Signature />
             </div>
           </Appear>
