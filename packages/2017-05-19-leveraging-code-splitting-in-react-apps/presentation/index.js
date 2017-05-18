@@ -143,19 +143,13 @@ export default class Presentation extends React.Component {
         <Slide
           notes={
             <ul>
-              <li>The new webpack docs notes, that it allows to split code into bundles which you load on demand</li>
+              <li>No code-splitting</li>
+              <li>Giant bundle</li>
+              <li>Load unnecessary code</li>
             </ul>
           }
         >
-          <Heading
-            notes={
-              <ul>
-                <li>No code-splitting</li>
-                <li>Giant bundle</li>
-                <li>Load unnecessary code</li>
-              </ul>
-            }
-          >
+          <Heading>
             Monolithic bundle
           </Heading>
           <Bundle />
@@ -197,6 +191,7 @@ export default class Presentation extends React.Component {
           notes={
             <ul>
               <li>Loads exact code for your feed page</li>
+              <li>Profile & 404 related code are not loaded</li>
             </ul>
           }
         >
@@ -236,7 +231,7 @@ export default class Presentation extends React.Component {
           notes={
             <ul>
               <li>Why do we want to code split?</li>
-              <li>We aim to not see this spinner (for too long)</li>
+              <li>We aim to reduce the time of showing this spinner</li>
             </ul>
           }
         >
@@ -246,7 +241,7 @@ export default class Presentation extends React.Component {
         <Slide
           notes={
             <ul>
-              <li>Mono bundles tend to feel like this</li>
+              <li>Apps with mono bundles can tend to feel like this</li>
             </ul>
           }
         >
@@ -267,10 +262,10 @@ export default class Presentation extends React.Component {
           bgImage={images.mobileTrend}
           notes={
             <ul>
-              <li>We are priviledged</li>
-              <li>We have high speed computers & internet</li>
-              <li>More & more users using internet through smartphones</li>
-              <li>Users with low 3G will thank you!</li>
+              <li>We engineers are priviledged</li>
+              <li>We have fiber power internet connection</li>
+              <li>Outside more & more users using internet through smartphones</li>
+              <li>Users (in most cases) with low 3G will thank you!</li>
             </ul>
           }
         />
@@ -278,11 +273,11 @@ export default class Presentation extends React.Component {
         <Slide
           notes={
             <ul>
-              <li>Dynamic import has arrived!</li>
+              <li>Dynamic import have arrived!</li>
               <li>Function-like syntactic form to load modules asynchronously</li>
-              <li>import() Returns the Promise which resolves the module</li>
+              <li>import() Returns a Promise and resolves the module</li>
               <li>TC39 proposal: Stage 3</li>
-              <li>If you want babel to understand it: syntax-dynamic-plugin</li>
+              <li>If you want Babel to understand it: syntax-dynamic-plugin</li>
               <li>Webpack v2 support</li>
             </ul>
           }
@@ -301,7 +296,7 @@ export default class Presentation extends React.Component {
         <Slide
           notes={
             <ul>
-              <li>Instead of import MyModule from '../MyModule'</li>
+              <li>Instead of `import MyModule from '../MyModule';`</li>
               <li>You would call import like a function and pass the path to your module</li>
               <li>Then as a result you get your module</li>
             </ul>
@@ -471,14 +466,14 @@ console.log(MyModule);`
         <Slide
           notes={
             <ul>
-              <li>CS allow to load code as needed</li>
+              <li>CS can load your code as needed</li>
               <li>Async CS will load code on demand / adds script tag to head</li>
               <li>Avoid shared modules, only do it if you exactly know what to do</li>
               <li>Double-check if CS makes sense (effort, etc.)</li>
             </ul>
           }
         >
-          <Heading>Final thoughts</Heading>
+          <Heading>Recap</Heading>
 
           <List>
             <ListItem>loads code as needed</ListItem>
