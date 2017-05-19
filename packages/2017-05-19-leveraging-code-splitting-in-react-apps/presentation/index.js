@@ -61,7 +61,11 @@ const theme = createTheme({
 const ranges = {
   simple: [
     { loc: [0, 15] },
-    { loc: [16, 32] }
+    { loc: [2, 5] },
+    { loc: [6, 15] },
+    { loc: [16, 32] },
+    { loc: [21, 24] },
+    { loc: [25, 30] }
   ],
   detail: [
     { loc: [0, 1] },
@@ -462,6 +466,7 @@ console.log(MyModule);`
           <List>
             <ListItem>Load code as needed</ListItem>
             <ListItem>Code-splitting can load code on demand</ListItem>
+            <ListItem>Try out with create-react-app!</ListItem>
             <ListItem>Shared modules add complexity</ListItem>
             <ListItem>Don't over-engineer!</ListItem>
           </List>
