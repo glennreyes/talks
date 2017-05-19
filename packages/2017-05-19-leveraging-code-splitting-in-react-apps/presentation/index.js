@@ -37,6 +37,7 @@ import "spectacle/lib/themes/default/index.css";
 
 
 const images = {
+  cra: require("../assets/cra-dynamic-import.gif"),
   feross: require("../assets/feross.png"),
   lowBandwidth: require("../assets/lowBandwidth.gif"),
   mobileTrend: require("../assets/mobileTrend.jpg"),
@@ -412,23 +413,9 @@ console.log(MyModule);`
           }
         />
 
-        <Slide
-          notes={
-          <ul>
-            <li>Benefit: Create easily split points via React components</li>
-            <li>Benefit: Reusable</li>
-          </ul>
-        }
-        >
-          <CodePane
-            lang="jsx"
-            style={{ fontSize: "2rem" }}
-            source={
-`<AsyncLoad
-  component={() => import('../Newsfeed')}
-/>`
-            }
-          />
+        <Slide>
+          <Heading>Create React App</Heading>
+          <Image src={images.cra} width="90%" />
         </Slide>
 
         <Slide
