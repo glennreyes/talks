@@ -11,3 +11,5 @@ Talks and slides by [@glnnrys](https://twitter.com/glnnrys)
 * [ReactEurope](https://react-europe.org): [Leveraging Code Splitting in React apps](https://glennreyes.github.io/talks/packages/2017-05-19-leveraging-code-splitting-in-react-apps) ([🎥](https://youtu.be/lj1WTv1Qq1c))
 
 * [FrontendCon](http://frontend-con.io/): [Leveraging Code Splitting in React apps](https://speakerdeck.com/glennreyes/leveraging-code-splitting-in-react-apps)
+
+* [ReactAlicante](http://reactalicante.es/): [Code Splitting in React apps](https://speakerdeck.com/glennreyes/code-splitting-in-react-apps)
