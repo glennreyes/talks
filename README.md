@@ -1,6 +1,6 @@
 # Talks
 
-Talks and slides by [@glnnrys](https://twitter.com/glnnrys)
+All my talks, slides & recordings at conferences & meetups
 
 ## 2018
 
